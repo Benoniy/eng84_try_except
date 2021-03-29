@@ -24,19 +24,22 @@ finally:
 
 # Task - read the data from a file and print it
 
-
 # Open a file and list the contents
 def open_and_list_file(filename):
-    try:
+    try:  # Try and open it
         file = open(filename)
         print("File opened")
-    except FileNotFoundError as errormsg:
-        print("File not found, ERROR:", errormsg)
+    except FileNotFoundError as errormsg:  # if it doesnt exist
+        file = open(filename, "w")
+        print("File opened")
+        file.write("empty right now")
+        file.close()
+        file = open(filename, "r")
     finally:
         print("\n" + file.name, "list: ")
         for f in file.readlines():
             print(f, end="")
 
 
-open_and_list_file("movies.txt")
+open_and_list_file("orders.txt")
 
