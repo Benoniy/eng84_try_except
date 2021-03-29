@@ -11,3 +11,17 @@
 
 * `raise ErrorType("message")` - manually raises an error.
 
+
+### Example: 
+```python
+# Try to open a file that does exist
+try:
+    file = open("orders.txt"  # Try and open a file
+    print("File opened")
+except FileNotFoundError as errormsg:  # if it fails
+    print("File not found, ERROR:", errormsg)
+finally:  # Despite anything before
+    print("Oh well at least finally is working!")
+```  
+
+# File creation and modification
