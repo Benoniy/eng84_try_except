@@ -71,4 +71,17 @@ def open_and_addto_file(filename, write):
     finally:
         file.write("\n" + write)
         file.close()
-```
+```  
+
+# CRUD:  
+* `create` - 
+  
+
+* `read` - 
+  
+
+* `update` - 
+  
+
+* `delete` - 
+
