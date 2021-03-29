@@ -41,4 +41,34 @@ finally:  # Despite anything before
 |'b' |This opens in binary mode.|  
 |'+' |This will open a file for reading and writing (updating)|  
 
+### Task 1 - read the data from a file and print it:  
+```python
+# Open a file and list the contents
+def open_and_list_file(filename):
+    try:  # Try and open it
+        file = open(filename)
+        print("File opened")
+    except FileNotFoundError as errormsg:  # if it doesnt exist
+        file = open(filename, "w")
+        print("File opened")
+        file.write("empty right now")
+        file.close()
+        file = open(filename, "r")
+    finally:
+        print("\n" + file.name, "list: ")
+        for f in file.readlines():
+            print(f, end="")
+```
 
+### Task 2 - Write an additional line of information to orders.txt:  
+```python
+def open_and_addto_file(filename, write):
+    try:  # Try and open it
+        file = open(filename, "a")
+        print("File opened")
+    except FileNotFoundError as errormsg:  # if it doesnt exist
+        print("Unknown error: ", errormsg)
+    finally:
+        file.write("\n" + write)
+        file.close()
+```

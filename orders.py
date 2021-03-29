@@ -41,6 +41,7 @@ def open_and_list_file(filename):
             print(f, end="")
 
 
+# Task 2 - write an additional line of information to orders.txt
 def open_and_addto_file(filename, write):
     try:  # Try and open it
         file = open(filename, "a")
@@ -48,7 +49,7 @@ def open_and_addto_file(filename, write):
     except FileNotFoundError as errormsg:  # if it doesnt exist
         print("Unknown error: ", errormsg)
     finally:
-        file.write("\n"+write)
+        file.write("\n" + write)
         file.close()
 
 
